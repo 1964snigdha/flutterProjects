@@ -5,7 +5,8 @@ void main()
   home: Scaffold(
     appBar: AppBar(
       title: const Text('Home'),
-    ),
+      centerTitle: true,     
+    ),          
   ),
   debugShowCheckedModeBanner: false,
 ));
