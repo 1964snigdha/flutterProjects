@@ -7,7 +7,9 @@ void main()
       title: const Text('Home'),
       centerTitle: true,     
     ),
-    body: Text("hello Subhadip"),          
+    body: Center(
+      child: new Text("Hello Manoj Sir"),
+    ),          
   ),
   debugShowCheckedModeBanner: false,
 ));
