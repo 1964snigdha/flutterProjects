@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 void main()
 {
   runApp(MaterialApp(
-    home: Scaffold(
-    appBar: AppBar(
-      title: const Text('Welcome to Dewdas Technology'),backgroundColor:Colors.deepOrange[400],centerTitle: true, 
-    ),
-    floatingActionButton: FloatingActionButton(onPressed: null,child: Text("click"),
-    ),
-    bottomNavigationBar: BottomNavigationBar(items: [
-      BottomNavigationBarItem(icon: Icon(Icons.home),title: Text('Home'),),
-      BottomNavigationBarItem(icon: Icon(Icons.backpack),title: Text('Backpack'),),
-    ]),
-    ),
+title:('Paytm Application'),
+ debugShowCheckedModeBanner: false,
+home: Scaffold(
+  body: CustomScrollView(
+    slivers:<Widget> [
+      SliverAppBar(
+title:Text('Paytm Application'),
+actions:<Widget>[
+Icon(Icons.bluetooth_searching)
+],
+leading:Icon(Icons.menu),
+centerTitle:true,
+      )
+    ],
   ),
- 
-  );
+),
+  ));
 }
+
+
 
 
  
