@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 void main()
 {
   runApp(MaterialApp(
-  home: Scaffold(
+    home: Scaffold(
     appBar: AppBar(
-      title: const Text('Home'),
-      centerTitle: true,     
+      title: const Text('Welcome to Dewdas Technology'),backgroundColor:Colors.deepOrange[400],centerTitle: true, 
     ),
-    body: Center(
-      child: new Text("Hello Manoj Sir"),
-    ),          
   ),
-  debugShowCheckedModeBanner: false,
-));
+ 
+)
+  );
 }
 
 
+ 
