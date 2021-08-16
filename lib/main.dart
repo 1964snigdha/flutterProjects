@@ -7,7 +7,12 @@ void main()
       title: const Text('Welcome to Dewdas Technology'),backgroundColor:Colors.deepOrange[400],centerTitle: true, 
     ),
     floatingActionButton: FloatingActionButton(onPressed: null,child: Text("click"),
-    ),),
+    ),
+    bottomNavigationBar: BottomNavigationBar(items: [
+      BottomNavigationBarItem(icon: Icon(Icons.home),title: Text('Home'),),
+      BottomNavigationBarItem(icon: Icon(Icons.backpack),title: Text('Backpack'),),
+    ]),
+    ),
   ),
  
   );
