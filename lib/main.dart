@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 void main()
 {
-  runApp(MaterialApp(
-title:('Paytm Application'),
- debugShowCheckedModeBanner: false,
-home: Scaffold(
-  body: CustomScrollView(
-    slivers:<Widget> [
-      SliverAppBar(
-title:Text('Paytm Application'),
-actions:<Widget>[
-Icon(Icons.bluetooth_searching)
-],
-leading:Icon(Icons.menu),
-centerTitle:true,
-      )
-    ],
+runApp(MaterialApp(
+  title:"First Application of Flutter",
+  home: Scaffold(
+    appBar: AppBar(title: Text("First Application of Flutter"),),
+    body: ListView(
+      children: [
+        Text("Menu Of Restaurant"),
+        Text("Masala Dosa"),
+        Text("Rava Idly"),
+        Text("Poha"),
+        Text("Paper Dosa"),
+
+      ],
+    ),
   ),
-),
-  ));
+));
+
 }
 
 
