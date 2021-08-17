@@ -10,7 +10,7 @@ void main()
     ),
     bottomNavigationBar: BottomNavigationBar(items: [
       BottomNavigationBarItem(icon: Icon(Icons.home),title: Text('Home'),),
-      BottomNavigationBarItem(icon: Icon(Icons.settings),title: Text('Settings'),),
+      BottomNavigationBarItem(icon: Icon(Icons.alarm),title: Text('Settings'),),
     ]),
     ),
   ),
