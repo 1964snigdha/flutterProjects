@@ -2,21 +2,16 @@ import 'package:flutter/material.dart';
 void main()
 {
 runApp(MaterialApp(
-  title:"First Application of Flutter",
+  title: "First Application",
   home: Scaffold(
-    appBar: AppBar(title: Text("First Application of Flutter"),),
-    body: ListView(
-      children: [
-        Text("Menu Of Restaurant"),
-        Text("Masala Dosa"),
-        Text("Rava Idly"),
-        Text("Poha"),
-        Text("Paper Dosa"),
-
-      ],
+    appBar: AppBar(
+      title:Text('First application') ,
     ),
-  ),
-));
+    body:ListView.builder(itemBuilder: (context,position)
+    {return Card(child: Text('Sample Text at'+position.toString()),);
+    }),) ,
+  )
+);
 
 }
 
