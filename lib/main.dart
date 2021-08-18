@@ -2,24 +2,30 @@ import 'package:flutter/material.dart';
 void main()
 {
   runApp(MaterialApp(
-title:('Paytm Application'),
+
  debugShowCheckedModeBanner: false,
 home: Scaffold(
   body: CustomScrollView(
     slivers:<Widget> [
       SliverAppBar(
-title:Text('Paytm Application'),
+title:Text('Slivers AppBar'),
 actions:<Widget>[
-Icon(Icons.bluetooth_searching)
+Icon(Icons.settings)
 ],
 leading:Icon(Icons.menu),
 centerTitle:true,
-      )
+expandedHeight: 150.0,
+            floating: true,
+            pinned: true,
+            flexibleSpace: new FlexibleSpaceBar(title: new Text('Slivers AppBar'),),
+      ),
     ],
   ),
 ),
   ));
 }
+
+
 
 
 
