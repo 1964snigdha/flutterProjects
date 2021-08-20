@@ -14,12 +14,22 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: new Text('Flutter Text Widget'),
       ),
-      body:  new Text(
+      body: new Text(
         'Lorem Ipsum Is Simply text of Printing.Lorem Ipsum is simply dummy text of the printing',
         textDirection: TextDirection.ltr,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.right,
         //overflow: TextOverflow.ellipsis,
-        textScaleFactor:2.0  ,
+        //textScaleFactor:2.0  ,
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+          wordSpacing: 20.0,
+          letterSpacing: 5.0,
+          color: Colors.redAccent,
+          backgroundColor: Colors.greenAccent,
+          fontStyle: FontStyle.italic,
+          decoration: TextDecoration.underline,
+        ),
       ),
     );
   }
