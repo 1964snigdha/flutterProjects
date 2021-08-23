@@ -15,15 +15,23 @@ class MyHome extends StatelessWidget {
         appBar: AppBar(
           title: new Text('Flutter Text Widget'),
         ),
-        body: RichText(
-            text: TextSpan(
-                text: "First",
-                style: TextStyle(fontSize: 20.0, color: Colors.lightBlue),
-                children: <TextSpan>[
-              TextSpan(text: 'Second',
-                  style: TextStyle(fontSize: 30, color: Colors.orange)),
-              TextSpan(text: 'Third',
-                  style: TextStyle(fontSize: 40, color: Colors.teal)),
-            ])));
+        body:Text.rich(
+          TextSpan(
+            text: 'Hello',
+            style: TextStyle(fontSize: 20.0,color: Colors.cyan),
+            children: <InlineSpan>[
+              TextSpan(
+                text: 'World',
+                style: TextStyle(fontSize: 30.0,color: Colors.orange),
+                
+              ),
+             TextSpan(
+                text: 'Subhadip',
+                style: TextStyle(fontSize: 40.0,color: Colors.purple),
+                
+              ), 
+            ]
+
+        )));
   }
 }
