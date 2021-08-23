@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title:('Text Exploring Text Widget Class'),
+    title: ('Text Exploring Text Widget Class'),
     home: new MyHome(),
   ));
 }
@@ -20,21 +20,24 @@ class MyHome extends StatelessWidget {
         textDirection: TextDirection.ltr,
         textAlign: TextAlign.center,
         overflow: TextOverflow.fade,
-       // textScaleFactor:1.5  ,
-       //maxLines:2 it will show the maximum number of lines to show ,
+        // textScaleFactor:1.5  ,
+        //maxLines:2 it will show the maximum number of lines to show ,
         style: TextStyle(
-          fontSize: 30.0,
+          fontSize: 60.0,
           fontWeight: FontWeight.w400,
           wordSpacing: 20.0,
           letterSpacing: 2.0,
-          //color: Colors.pink[600],
-          foreground: Paint()
-          ..color=Colors.yellowAccent,
-          background: Paint()
-          ..color=Colors.cyanAccent,
-          //backgroundColor: Colors.deepOrange[100],
+          color: Colors.pink[600],
+          //foreground: Paint()..color = Colors.yellowAccent,
+          //background: Paint()..color = Colors.cyanAccent,
+          backgroundColor: Colors.deepOrange[100],
           fontStyle: FontStyle.normal,
           decoration: TextDecoration.underline,
+          decorationColor: Colors.indigo[900],
+          decorationStyle: TextDecorationStyle.wavy,
+          shadows: [
+            Shadow(color: Colors.orange, blurRadius: 0.0, offset: Offset.infinite)
+          ],
         ),
       ),
     );
