@@ -12,22 +12,18 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: new Text('Flutter Text Widget'),
-      ),
-      body:Column(
-        children : [
-          DefaultTextStyle(style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.indigoAccent), 
-          child: Column(
-            children: [
-              Text('First'),
-              Text('Second'),
-              Text('Third'),
-              Text('Fourth'),
-            ],
-          ))
-        ],
-      )  
-    );
+        appBar: AppBar(
+          title: new Text('Flutter Text Widget'),
+        ),
+        body: RichText(
+            text: TextSpan(
+                text: "First",
+                style: TextStyle(fontSize: 20.0, color: Colors.lightBlue),
+                children: <TextSpan>[
+              TextSpan(text: 'Second',
+                  style: TextStyle(fontSize: 30, color: Colors.orange)),
+              TextSpan(text: 'Third',
+                  style: TextStyle(fontSize: 40, color: Colors.teal)),
+            ])));
   }
 }
