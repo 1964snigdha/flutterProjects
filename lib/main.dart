@@ -1,37 +1,47 @@
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MaterialApp(
+void main(){
+  runApp(new MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: ('Text Exploring Text Widget Class'),
-    home: new MyHome(),
-  ));
+    title: 'Form Widget',
+    home: MyForm()
+  )
+  );
+}
+class MyForm extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return MyFormState();
+  }
 }
 
-class MyHome extends StatelessWidget {
+class MyFormState extends State<MyForm>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text('Flutter Text Widget'),
+        title: new Text('My Form'),
       ),
-      body: Column(
-        children: [
-          TextField(
-            decoration: InputDecoration(
-                labelText: "Name",
-                hintText: "Your Name",
-                labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
-                border: OutlineInputBorder(),
-                prefixIcon:Icon(Icons.security) 
+      body: Container(
+        padding: EdgeInsets.symmetric(vertical: 25.0,horizontal: 25.0),
+        child: Form(
+          child: Column(
+            children:<Widget> [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Name",
+                  hintText: "Enter your Name"
                 ),
-                keyboardType: TextInputType.number,
-                //obscureText: true,
-                maxLength: 10,
-                maxLines: 4,
-          )
-        ],
+              )
+
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.done),
+        onPressed: () {    },
       ),
     );
   }
+
 }
