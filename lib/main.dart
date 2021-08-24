@@ -12,8 +12,7 @@ class MyForm extends StatefulWidget{
   State<StatefulWidget> createState() {
     return MyFormState();
   }
-}
-
+}  
 class MyFormState extends State<MyForm>{
   @override
   Widget build(BuildContext context) {
@@ -27,6 +26,12 @@ class MyFormState extends State<MyForm>{
           child: Column(
             children:<Widget> [
               TextFormField(
+               validator: (String msg){
+                 if (msg.isEmpty){
+                   return "Please enter Name";
+                 }
+                 return null;
+               },
                 decoration: InputDecoration(
                   labelText: "Name",
                   hintText: "Enter your Name"
