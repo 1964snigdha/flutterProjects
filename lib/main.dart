@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Text Field Focus',
+      title: 'Retrieve Text Input',
       home: MyCustomForm(),
     );
   }
@@ -23,56 +23,53 @@ class MyCustomForm extends StatefulWidget {
 }
 
 // Define a corresponding State class.
-// This class holds data related to the form.
+// This class holds data related to the Form.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Define the focus node. To manage the lifecycle, create the FocusNode in
-  // the initState method, and clean it up in the dispose method.
-  late FocusNode myFocusNode;
+  // Create a text controller and use it to retrieve the current value
+  // of the TextField.
+  final myController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
 
-    myFocusNode = FocusNode();
+    // Start listening to changes.
+    myController.addListener(_printLatestValue);
   }
 
   @override
   void dispose() {
-    // Clean up the focus node when the Form is disposed.
-    myFocusNode.dispose();
-
+    // Clean up the controller when the widget is removed from the widget tree.
+    // This also removes the _printLatestValue listener.
+    myController.dispose();
     super.dispose();
+  }
+
+  void _printLatestValue() {
+    print('Second text field: ${myController.text}');
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Text Field Focus'),
+        title: const Text('Retrieve Text Input'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            // The first text field is focused on as soon as the app starts.
-            const TextField(
-              autofocus: true,
-            ),
-            // The second text field is focused on when a user taps the
-            // FloatingActionButton.
             TextField(
-              focusNode: myFocusNode,
+              onChanged: (text) {
+                print('First text field: $text');
+              },
+            ),
+            TextField(
+              controller: myController,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        // When the button is pressed,
-        // give focus to the text field using myFocusNode.
-        onPressed: () => myFocusNode.requestFocus(),
-        tooltip: 'Focus Second Text Field',
-        child: const Icon(Icons.edit),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
