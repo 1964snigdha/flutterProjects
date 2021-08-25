@@ -1,57 +1,97 @@
+
 import 'package:flutter/material.dart';
-void main(){
-  runApp(new MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Form Widget',
-    home: MyForm()
-  )
-  );
-}
-class MyForm extends StatefulWidget{
+
+void main() => runApp( MyApp());
+
+class MyApp extends StatelessWidget {
+    
+
   @override
-  State<StatefulWidget> createState() {
-    return MyFormState();
+  Widget build(BuildContext context) {
+    const appTitle = 'Form Validation Demo';
+
+    return MaterialApp(
+      title: appTitle,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(appTitle),
+        ),
+        body: const MyCustomForm(),
+      ),
+    );
   }
 }
 
-class MyFormState extends State<MyForm>{
-  var _myFormKey=GlobalKey<FormState>();
+// Create a Form widget.
+class MyCustomForm extends StatefulWidget {
+  const MyCustomForm({Key? key}) : super(key: key);
+
+  @override
+  MyCustomFormState createState() {
+    return MyCustomFormState();
+  }
+}
+
+// Create a corresponding State class.
+// This class holds data related to the form.
+class MyCustomFormState extends State<MyCustomForm> {
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
+  //
+  // Note: This is a GlobalKey<FormState>,
+  // not a GlobalKey<MyCustomFormState>.
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: new Text('My Form'),
-      ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 25.0,horizontal: 25.0),
-        child: Form(
-          key:_myFormKey ,
-          child: Column(
-            children:<Widget> [
-              TextFormField(
-             validator: (value) {
+    // Build a Form widget using the _formKey created above.
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextFormField(
+           decoration: InputDecoration(
+             labelText: 'Username',
+             hintText: 'Enter your username',
+             border: OutlineInputBorder(),
+           ), 
+            // The validator receives the text that the user has entered.
+            validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
               }
               return null;
             },
-                decoration: InputDecoration(
-                  labelText: "Name",
-                  hintText: "Enter your Name"
-                ),
-              )
-
-            ],
+            
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.done),
-        onPressed: () { 
-          _myFormKey.currentState!.validate();
-           },
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0,horizontal: 50.0),
+            child: ElevatedButton(
+          
+              onPressed: () {
+                // Validate returns true if the form is valid, or false otherwise.
+                if (_formKey.currentState!.validate()) {
+                  // If the form is valid, display a snackbar. In the real world,
+                  // you'd often call a server or save the information in a database.
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Processing Data')),
+                  );
+                }
+              },
+              child: const Text('Submit'),
+            ),
+          ),
+        ],
       ),
     );
   }
-
 }
+/*
+RaisedButton Class is obsolete,we have to use Elevated button instead.
+In Raised button on pressed is mandatory property
+Learned about columns Cross Alignment Class
+_formKey.currentState() method to access the FormState
+
+
+*/
