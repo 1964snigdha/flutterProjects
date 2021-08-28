@@ -23,11 +23,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  rxdart: ^0.27.1
+reactive_forms: ^10.6.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +36,7 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
+cupertino_icons: ^1.0.2
 # The following section is specific to Flutter.
 flutter:
 
