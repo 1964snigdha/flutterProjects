@@ -11,28 +11,20 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Expanded Widget'),
         ),
-        body:Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              color: Colors.blue,
-              height: 100,
-              width: 100,
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.amber,
-                width: 100,
-              ),
-            ),
-            Container(
-              color: Colors.blue,
-              height: 100,
-              width: 100,
-            ),
-          ],
-        ),
+        body:Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  mainAxisSize: MainAxisSize.max,
+  children: <Widget>[
+    const Text('Subhadip'),
+    const Text('Manoj Sir'),
+    const Text('Flutter Demo'),
+    const Text('column'),
+    const Text('It’s either that or meet the business end of a bayonet'),
+    const Text('Hi how r You'),
+    Text('Rochambeau!', ),
+  ],
+),
       ),
-    ),);
+    );
   }
-} 
+}
