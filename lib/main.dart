@@ -35,15 +35,15 @@ class MyApp extends StatelessWidget {
               ),
                ListTile(
                 leading: Icon(Icons.verified_user),
-                title: Text('Subhadip First Application'),
-                subtitle: Text('Manoj Sir'),
+                title: Text('2nd Title'),
+                subtitle: Text('2nd Subtitle \nsample subtitle 3'),
                 trailing: Icon(Icons.delete),
-                onTap: () {},
-                onLongPress: () {
-                  Text("LOng Press");
-                },
+               enabled: false,
+               dense: true,
+               isThreeLine: true,
+               ),
 
-              ),
+              
             ],
 
           ),
