@@ -38,21 +38,22 @@ class MyApp extends StatelessWidget {
                 title: Text('2nd Title'),
                 subtitle: Text('2nd Subtitle \nsample subtitle 3'),
                 trailing: Icon(Icons.delete),
-               enabled: false,
+               enabled: true,
                dense: true,
                isThreeLine: true,
+               onLongPress: () {
+                 print('long pressed is clicked');
+               },
+               onTap: () {
+                 print('on Tap Fired');
+               },
                ),
-
-              
             ],
-
           ),
         ),
         )
           
         );
-        
-    
     
   }
 }
