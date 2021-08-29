@@ -11,49 +11,37 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Welcome to Flutter'),
         ),
-        body:Center(
-          child: Text('Drawer Applicaton'),
-        ),
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.all(0.0),
-            children: [
-              UserAccountsDrawerHeader(
-                accountEmail: Text("1964Snigdha@gmail.com"),
-                accountName: Text("Subhadip Mondal"),
-                currentAccountPicture: CircleAvatar(
-                  child: Text('MyPIC'),
-                ),
-              ),
-              ListTile(
-                leading: Icon(Icons.verified_user),
-                title: Text('Subhadip First Application'),
-                subtitle: Text('Manoj Sir'),
-                trailing: Icon(Icons.delete),
-                onTap: () {},
-
-              ),
-               ListTile(
-                leading: Icon(Icons.verified_user),
-                title: Text('2nd Title'),
-                subtitle: Text('2nd Subtitle \nsample subtitle 3'),
-                trailing: Icon(Icons.delete),
-               enabled: true,
-               dense: true,
-               isThreeLine: true,
-               onLongPress: () {
-                 print('long pressed is clicked');
-               },
-               onTap: () {
-                 print('on Tap Fired');
-               },
-               ),
-            ],
+    child: ListView(
+      padding: EdgeInsets.zero,
+      children: const <Widget>[
+        DrawerHeader(
+          decoration: BoxDecoration(
+            color: Colors.blue,
+          ),
+          child: Text(
+            'Drawer Header',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+            ),
           ),
         ),
-        )
-          
-        );
-    
+        ListTile(
+          leading: Icon(Icons.message),
+          title: Text('Messages'),
+        ),
+        ListTile(
+          leading: Icon(Icons.account_circle),
+          title: Text('Profile'),
+        ),
+        ListTile(
+          leading: Icon(Icons.settings),
+          title: Text('Settings'),
+        ),
+      ],
+    ),
+  ),
+));
   }
 }
