@@ -11,37 +11,19 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Welcome to Flutter'),
         ),
-        drawer: Drawer(
-    child: ListView(
-      padding: EdgeInsets.zero,
-      children: const <Widget>[
-        DrawerHeader(
-          decoration: BoxDecoration(
-            color: Colors.blue,
-          ),
-          child: Text(
-            'Drawer Header',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-            ),
-          ),
-        ),
-        ListTile(
-          leading: Icon(Icons.message),
-          title: Text('Messages'),
-        ),
-        ListTile(
-          leading: Icon(Icons.account_circle),
-          title: Text('Profile'),
-        ),
-        ListTile(
-          leading: Icon(Icons.settings),
-          title: Text('Settings'),
-        ),
-      ],
+        body: Row(
+          children: [
+             const FlutterLogo(),
+    const Expanded(
+      child: Text("Flutter's hot reload helps you quickly and easily experiment, build UIs, add features, and fix bug faster. Experience sub-second reload times, without losing state, on emulators, simulators, and hardware for iOS and Android."),
     ),
-  ),
-));
+    const Icon(Icons.sentiment_very_satisfied),
+  ],
+        ),
+      )
+          
+          
+        );
   }
 }
+        
